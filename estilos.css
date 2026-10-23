@@ -1,0 +1,139 @@
+/*
+   Forma de una regla CSS:  selector { propiedad: valor; }
+   */
+
+/* 1. COLORES: los guardamos en variables para cambiarlos fácil */
+:root {
+  --fondo: #14131a;       /* casi negro, con un toque azul */
+  --tarjeta: #1f1d28;     /* gris oscuro para las opciones */
+  --texto: #ece8e1;       /* blanco cálido */
+  --texto-suave: #a8a3b3; /* gris claro */
+  --acento: #b3261e;      /* rojo oscuro para botones y selección */
+}
+
+/* 2. LO GENERAL: aplica a toda la página */
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+  font-size: 18px;        /* letra grande para leer en el celular */
+  line-height: 1.6;       /* espacio entre renglones */
+}
+
+/* 3. BARRA DE PROGRESO (arriba de la página) */
+#barra-fondo {
+  width: 100%;
+  height: 6px;
+  background: var(--tarjeta);
+}
+
+#barra-progreso {
+  width: 0%;              /* el JavaScript cambiará este valor */
+  height: 100%;
+  background: var(--acento);
+  transition: width 0.4s; /* que avance suavemente */
+}
+
+/* 4. EL FORMULARIO: una columna centrada */
+#formulario {
+  max-width: 640px;       /* no se estira demasiado en computador */
+  margin: 0 auto;         /* centrado */
+  padding: 30px 20px;
+}
+
+/* 5. LAS PANTALLAS: todas escondidas, menos la que tenga la clase "activa" */
+.pantalla {
+  display: none;
+}
+
+.pantalla.activa {
+  display: block;
+}
+
+/* 6. TÍTULOS Y TEXTOS */
+h1 {
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 30px 0 20px 0;
+}
+
+p {
+  color: var(--texto-suave);
+}
+
+/* 7. LAS OPCIONES DE RESPUESTA */
+.opcion {
+  display: block;
+  background: var(--tarjeta);
+  border: 2px solid var(--tarjeta);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;        /* manito al pasar el mouse */
+}
+
+.opcion:hover {
+  border-color: var(--texto-suave);
+}
+
+/* Cuando la opción está marcada, se pinta con el color de acento */
+.opcion:has(input:checked) {
+  border-color: var(--acento);
+}
+
+.opcion input {
+  margin-right: 10px;
+}
+
+/* 8. LA CAJA DEL NOMBRE */
+label[for="nombre"] {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  background: var(--tarjeta);
+  color: var(--texto);
+  border: 2px solid var(--tarjeta);
+  border-radius: 8px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+/* 9. LOS BOTONES */
+button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  font-size: 1.1rem;
+  color: white;
+  background: var(--acento);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}

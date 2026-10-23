@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 30px 20px;
+  background: #14131a;
+  color: #ece8e1;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+#login, #panel {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#panel { display: none; }  /* se muestra solo después de entrar */
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  background: #1f1d28;
+  color: #ece8e1;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  padding: 14px 20px;
+  font-size: 1rem;
+  color: white;
+  background: #b3261e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.caja {
+  background: #1f1d28;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.numero {
+  font-size: 2.5rem;
+  color: #b3261e;
+}

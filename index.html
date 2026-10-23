@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El precio de nuestros principios</title>
+
+  <!-- Aquí conectamos el CSS (el diseño) -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Barra de progreso (la llenaremos con JavaScript) -->
+  <div id="barra-fondo">
+    <div id="barra-progreso"></div>
+  </div>
+
+  <!-- El formulario completo. Cada <section> es UNA pantalla -->
+  <form id="formulario">
+
+    <!-- PANTALLA 0: Bienvenida -->
+    <section class="pantalla activa" id="pantalla-0">
+      <h1>El precio de nuestros principios</h1>
+      <p>Cinco dilemas. Sin respuestas correctas.</p>
+      <p>Son situaciones hipotéticas. Tu nombre o apodo solo sirve para contar cuántas personas respondieron: los resultados se analizan en conjunto, nunca con nombres.</p>
+      <button type="button" class="btn-siguiente">Empezar</button>
+    </section>
+
+    <!-- PANTALLA DE REGISTRO: nombre o apodo, y luego la edad -->
+    <section class="pantalla" id="pantalla-registro">
+      <h2>Antes de empezar</h2>
+
+      <label for="nombre">Tu nombre o apodo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe aquí" maxlength="40" required>
+
+      <h2>¿En qué rango de edad estás?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="edad" value="menos-18" required>
+        Menos de 18
+      </label>
+      <label class="opcion">
+        <input type="radio" name="edad" value="18-29">
+        18 a 29
+      </label>
+      <label class="opcion">
+        <input type="radio" name="edad" value="30-44">
+        30 a 44
+      </label>
+      <label class="opcion">
+        <input type="radio" name="edad" value="45-59">
+        45 a 59
+      </label>
+      <label class="opcion">
+        <input type="radio" name="edad" value="60-mas">
+        60 o más
+      </label>
+
+      <button type="button" class="btn-siguiente">Siguiente</button>
+    </section>
+
+    <!-- PANTALLA 1: El órgano  -->
+    <section class="pantalla" id="pantalla-1">
+      <h2>Un médico tiene un solo órgano disponible y cuatro personas lo necesitan para sobrevivir. Solo una puede recibirlo. ¿A quién se lo daría?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="p1" value="nino" required>
+        A un niño de 8 años
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p1" value="madre">
+        A una madre de 35 años con tres hijos pequeños
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p1" value="cientifico">
+        A un científico de 50 años que está cerca de descubrir una cura importante
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p1" value="anciano">
+        A un anciano de 80 años que fue el primero en la lista de espera
+      </label>
+
+      <button type="button" class="btn-siguiente">Siguiente</button>
+    </section>
+
+    <!-- PANTALLA 2: La empresa que contamina -->
+    <section class="pantalla" id="pantalla-2">
+      <h2>Llevas años trabajando en una empresa que es tu única fuente de ingresos y en la que has puesto tus sueños: tu ascenso, tus metas, el futuro que estás construyendo. De ella dependen cientos de familias. Un día descubres que el trabajo que se realiza en esa empresa contamina el río que abastece de agua a un pueblo pobre, y que ya hay niños enfermándose. Si lo denuncias, la empresa quiebra: pierdes tu empleo, tus sueños y tu estabilidad, y cientos de familias se quedan sin sustento. Nadie te aplaudirá por ello: en tu sector te cerrarán todas las puertas por haber denunciado, y no recibirás ningún reconocimiento ni recompensa. Nadie más lo sabe. ¿Qué haces?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="p2" value="denuncio" required>
+        Lo denuncio, aunque yo y cientos de familias lo perdamos todo
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p2" value="callo">
+        Me callo, porque mi futuro y el de cientos de familias también son vidas
+      </label>
+
+      <button type="button" class="btn-siguiente">Siguiente</button>
+    </section>
+
+    <!-- PANTALLA 3: El hijo culpable -->
+    <section class="pantalla" id="pantalla-3">
+      <h2>Tu hijo, a quien criaste con todo tu esfuerzo, atropelló a una persona de noche y se fue sin auxiliarla. Esa persona murió. Nadie lo vio y solo tú lo sabes porque él te lo confesó llorando. Tiene 19 años y toda la vida por delante. La familia de la víctima lleva meses buscando respuestas. ¿Qué haces?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="p3" value="entrego" required>
+        Lo entrego a la justicia, aunque destruya su vida
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p3" value="protejo">
+        Guardo silencio y lo protejo, aunque esa familia nunca sepa la verdad
+      </label>
+
+      <button type="button" class="btn-siguiente">Siguiente</button>
+    </section>
+
+    <!-- PANTALLA 4: El asesino de tu hijo -->
+    <section class="pantalla" id="pantalla-4">
+      <h2>Hace 2 años asesinaron a tu hijo. Nunca se supo quién fue y todavía no logras superarlo. Hoy descubres que el responsable es un hombre que desde entonces ayuda a muchísimas personas, y varias vidas dependen de él. Solo tú lo sabes. ¿Qué haces?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="p4" value="denuncio" required>
+        Lo denuncio para que pague
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p4" value="justicia">
+        Me hago justicia yo mismo
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p4" value="castigo">
+        No lo denuncio, pero me aseguro de que su vida nunca vuelva a ser tranquila
+      </label>
+
+      <button type="button" class="btn-siguiente">Siguiente</button>
+    </section>
+
+    <!-- PANTALLA 5: El mejor amigo -->
+    <section class="pantalla" id="pantalla-5">
+      <h2>Si tu mejor amigo engañara a su pareja, ¿le contarías la verdad a esa persona aunque tu amistad terminara?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="p5" value="cuento" required>
+        Sí, le contaría la verdad
+      </label>
+      <label class="opcion">
+        <input type="radio" name="p5" value="silencio">
+        No, guardaría silencio
+      </label>
+
+      <button type="button" class="btn-siguiente">Siguiente</button>
+    </section>
+
+    <!-- PANTALLA 6: Sinceridad -->
+    <section class="pantalla" id="pantalla-7">
+      <h2>¿Qué tan sincero fuiste respondiendo esta encuesta?</h2>
+
+      <label class="opcion">
+        <input type="radio" name="sinceridad" value="muy" required>
+        Muy sincero
+      </label>
+      <label class="opcion">
+        <input type="radio" name="sinceridad" value="poco">
+        Poco sincero
+      </label>
+
+      <button type="submit" id="btn-enviar">Enviar respuestas</button>
+    </section>
+
+    <!-- PANTALLA 7: Gracias -->
+    <section class="pantalla" id="pantalla-8">
+      <h2>Gracias por responder</h2>
+      <p>Tus respuestas fueron enviadas.</p>
+    </section>
+
+  </form>
+
+  <!-- JavaScript: primero Firebase, luego la lógica del formulario -->
+  <!-- Librerías de Firebase (las descarga de internet) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <!-- Nuestra conexión a Firebase (debe ir antes que app.js) -->
+  <script src="firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

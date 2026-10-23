@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis de resultados</title>
+  <link rel="stylesheet" href="analisis.css">
+</head>
+<body>
+
+  <!-- Inicio de sesión: solo entra el administrador -->
+  <div id="login">
+    <h1>Análisis de resultados</h1>
+    <input type="email" id="correo" placeholder="Correo">
+    <input type="password" id="clave" placeholder="Contraseña">
+    <button id="btn-entrar">Entrar</button>
+  </div>
+
+  <!-- Panel con las estadísticas -->
+  <div id="panel">
+    <button id="btn-salir">Cerrar sesión</button>
+    <h1>El precio de nuestros principios</h1>
+
+    <div class="caja">
+      <span class="numero" id="total">0</span> personas respondieron
+    </div>
+
+    <div class="caja">
+      <span class="numero" id="doble">0%</span>
+      protegería a su hijo de la cárcel, pero no dejaría que la ley juzgue al asesino del suyo
+    </div>
+
+    <div class="caja"><h3>P1. El órgano</h3><canvas id="g1"></canvas></div>
+    <div class="caja"><h3>P2. La empresa que contamina el río</h3><canvas id="g2"></canvas></div>
+    <div class="caja"><h3>P3. El hijo que atropelló a alguien</h3><canvas id="g3"></canvas></div>
+    <div class="caja"><h3>P4. El asesino de tu hijo</h3><canvas id="g4"></canvas></div>
+    <div class="caja"><h3>P5. El mejor amigo infiel</h3><canvas id="g5"></canvas></div>
+    <div class="caja"><h3>Sinceridad declarada</h3><canvas id="g6"></canvas></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="firebase.js"></script>
+  <script src="analisis.js"></script>
+</body>
+</html>
